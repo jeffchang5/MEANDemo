@@ -7,15 +7,13 @@ controls: false
 #MEAN Development
 
 --
---
 ### What we're going to do tonight
 * Learn how to use node's package manager
 * Build upon fundamental web principles
 * Set up a basic express application
 * Be able to keep state in a Mongo database
 * Learn some basic vocabulary about the web 
-
-
+--
 ### What is a software stack?
 
 * LAMP
