@@ -1,7 +1,6 @@
 title: MEAN
-output: slides.html
 theme: jdan/cleaver-retro
-output: slides.html
+output: index.html
 controls: false
 
 --
