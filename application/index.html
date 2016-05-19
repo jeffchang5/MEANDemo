@@ -1,647 +1,234 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <title>MEAN</title>
-  <style type="text/css">
-    body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #222;
-  font-size: 100%;
-}
 
-.slide {
-  position: absolute;
-  top: 0; bottom: 0;
-  left: 0; right: 0;
-  background-color: #f7f7f7;
-}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-.slide-content {
-  width: 800px;
-  height: 600px;
-  overflow: hidden;
-  margin: 80px auto 0 auto;
-  padding: 30px;
+    <title>Landing Page - Start Bootstrap Theme</title>
 
-  font-weight: 200;
-  font-size: 200%;
-  line-height: 1.375;
-}
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-.controls {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-}
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
 
-.arrow {
-  width: 0; height: 0;
-  border: 30px solid #333;
-  float: left;
-  margin-right: 30px;
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-.prev {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-
-  border-left-width: 0;
-  border-right-width: 50px;
-}
-
-.next {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
-
-  border-left-width: 50px;
-  border-right-width: 0;
-}
-
-.prev:hover {
-  border-right-color: #888;
-  cursor: pointer;
-}
-
-.next:hover {
-  border-left-color: #888;
-  cursor: pointer;
-}
-
-h1 {
-  font-size: 300%;
-  line-height: 1.2;
-  text-align: center;
-  margin: 170px 0 0;
-}
-
-h2 {
-  font-size: 100%;
-  line-height: 1.2;
-  margin: 5px 0;
-  text-align: center;
-  font-weight: 200;
-}
-
-h3 {
-  font-size: 140%;
-  line-height: 1.2;
-  border-bottom: 1px solid #aaa;
-  margin: 0;
-  padding-bottom: 15px;
-}
-
-ul {
-  padding: 20px 0 0 60px;
-  font-weight: 200;
-  line-height: 1.375;
-}
-
-.author h1 {
-  font-size: 170%;
-  font-weight: 200;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.author h3 {
-  font-weight: 100;
-  text-align: center;
-  font-size: 95%;
-  border: none;
-}
-
-a {
-  text-decoration: none;
-  color: #44a4dd;
-}
-
-a:hover {
-  color: #66b5ff;
-}
-
-pre {
-  font-size: 60%;
-  line-height: 1.3;
-}
-
-.progress {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-}
-
-.progress-bar {
-  width: 0%;
-  height: 3px;
-  background-color: #b4b4b4;
-
-  -webkit-transition: width 0.05s ease-out;
-  -moz-transition: width 0.05s ease-out;
-  -o-transition: width 0.05s ease-out;
-  transition: width 0.05s ease-out;
-}
-
-.hidden {
-  display: none;
-}
-
-@media (max-width: 850px) {
-
-  body {
-    font-size: 70%;
-  }
-
-  .slide-content {
-    width: auto;
-  }
-
-  img {
-    width: 100%;
-  }
-
-  h1 {
-    margin-top: 120px;
-  }
-
-  .prev, .prev:hover {
-    border-right-color: rgba(135, 135, 135, 0.5);
-  }
-
-  .next, .next:hover {
-    border-left-color: rgba(135, 135, 135, 0.5);
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 50%;
-    overflow: hidden;
-  }
-
-  .slide-content {
-    padding: 10px;
-    margin-top: 10px;
-    height: 340px;
-  }
-
-  h1 {
-    margin-top: 50px;
-  }
-
-  ul {
-    padding-left: 25px;
-  }
-}
-
-@media print {
-  * {
-    -webkit-print-color-adjust: exact;
-  }
-
-  @page {
-    size: letter;
-  }
-
-  .hidden {
-    display: inline;
-  }
-
-  html {
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-  }
-
-  body {
-    margin: 0 auto !important;
-    border: 0;
-    padding: 0;
-    float: none !important;
-    overflow: visible;
-    background: none !important;
-    font-size: 52%;
-  }
-
-  .progress, .controls {
-    display: none;
-  }
-
-  .slide {
-    position: static;
-  }
-
-  .slide-content {
-    border: 1px solid #222;
-    margin-top: 0;
-    margin-bottom: 40px;
-    height: 3.5in;
-    overflow: visible;
-  }
-
-  .slide:nth-child(even) {
-    /* 2 slides per page */
-    page-break-before: always;
-  }
-}
-
-/*
-
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
-}
-
-.hljs-comment,
-.hljs-quote {
-  color: #998;
-  font-style: italic;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: bold;
-}
-
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
-}
-
-.hljs-string,
-.hljs-doctag {
-  color: #d14;
-}
-
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: bold;
-}
-
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: bold;
-}
-
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-  color: #000080;
-  font-weight: normal;
-}
-
-.hljs-regexp,
-.hljs-link {
-  color: #009926;
-}
-
-.hljs-symbol,
-.hljs-bullet {
-  color: #990073;
-}
-
-.hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3;
-}
-
-.hljs-meta {
-  color: #999;
-  font-weight: bold;
-}
-
-.hljs-deletion {
-  background: #fdd;
-}
-
-.hljs-addition {
-  background: #dfd;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-body {
-  background-color: #222;
-  color: #eee;
-}
-
-h1, h3 {
-  font-family: Impact;
-  font-weight: bold;
-  font-style: italic;
-}
-
-pre code {
-  color: #ccc;
-  font-size: 140%;
-}
-
-.slide {
-  background-color: inherit;
-}
-
-.keyword {
-  color: #0086b3 !important;
-  font-weight: inherit !important;
-}
-
-.tag {
-  color: #900 !important;
-}
-
-code {
-  background-color: inherit;
-}
-
-em {
-  border-bottom: 1px solid #666;
-}
-
-  </style>
 </head>
+
 <body>
-    <div class="progress">
-    <div class="progress-bar"></div>
-  </div>
 
-  <div class="slide" id="slide-1">
-    <section class="slide-content"><h1 id="mean-development">MEAN Development</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-2">
-    <section class="slide-content"><h3 id="what-we-re-going-to-do-tonight">What we&#39;re going to do tonight</h3>
-<ul>
-<li>Learn how to use node&#39;s package manager</li>
-<li>Build upon fundamental web principles</li>
-<li>Set up a basic express application</li>
-<li>Be able to keep state in a Mongo database</li>
-<li>Learn some basic vocabulary about the web</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-3">
-    <section class="slide-content"><h3 id="what-is-a-software-stack-">What is a software stack?</h3>
-<ul>
-<li>LAMP</li>
-<li>A set of technologies to build a platform</li>
-<li>For example, <a href="https://weather.com/">Weather.com</a> and <a href="https://www.uber.com/">Uber</a></li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-4">
-    <section class="slide-content"><h1 id="what-does-mean-stand-for-">What does MEAN stand for?</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-5">
-    <section class="slide-content"><h3 id="mongodb">MongoDB</h3>
-<ul>
-<li>Database </li>
-<li>Holds our data</li>
-<li>SQL vs NoSQL </li>
-<li>Mongoose</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-6">
-    <section class="slide-content"><h3 id="express">Express</h3>
-<ul>
-<li>Web framework</li>
-<li>Minimialist web routing </li>
-<li>Used to build API endpoints</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-7">
-    <section class="slide-content"><h3 id="angularjs">AngularJS</h3>
-<ul>
-<li>Web application framework</li>
-<li>Superheroic front-end framework</li>
-<li>Templating</li>
-<li>Data-binding</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-8">
-    <section class="slide-content"><h3 id="node-js">Node.js</h3>
-<ul>
-<li>A development environment</li>
-<li>Event-driven</li>
-<li>Asychronous I/O</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-9">
-    <section class="slide-content"><h3 id="why-use-mean-for-your-software-stack-">Why use MEAN for your software stack?</h3>
-<ul>
-<li>Abundance of community support</li>
-<li>Fast and robust</li>
-<li>Modern</li>
-<li>Javascript</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-10">
-    <section class="slide-content"><h3 id="installing-the-mean-stack">Installing the MEAN Stack</h3>
-<h5 id="windows">Windows</h5>
-<pre><code>choco install mongodb</code></pre>
-<h5 id="mac">Mac</h5>
-<pre><code>brew install node 
-brew install npm</code></pre>
-<h5 id="linux">Linux</h5>
-<pre><code>sudo apt-get install nodejs
-sudo apt-get install npm</code></pre>
-</section>
-  </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
 
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
 
-  <script type="text/javascript">
-    /**
- * Returns the current page number of the presentation.
- */
-function currentPosition() {
-  return parseInt(document.querySelector('.slide:not(.hidden)').id.slice(6));
-}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Landing Page</h1>
+                        <h3>A Template by Start Bootstrap</h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+        <!-- /.container -->
 
-/**
- * Navigates forward n pages
- * If n is negative, we will navigate in reverse
- */
-function navigate(n) {
-  var position = currentPosition();
-  var numSlides = document.getElementsByClassName('slide').length;
+    </div>
+    <!-- /.intro-header -->
 
-  /* Positions are 1-indexed, so we need to add and subtract 1 */
-  var nextPosition = (position - 1 + n) % numSlides + 1;
+    <!-- Page Content -->
 
-  /* Normalize nextPosition in-case of a negative modulo result */
-  nextPosition = (nextPosition - 1 + numSlides) % numSlides + 1;
+	<a  name="services"></a>
+    <div class="content-section-a">
 
-  document.getElementById('slide-' + position).classList.add('hidden');
-  document.getElementById('slide-' + nextPosition).classList.remove('hidden');
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
+                    <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/ipad.png" alt="">
+                </div>
+            </div>
 
-  updateProgress();
-  updateURL();
-  updateTabIndex();
-}
+        </div>
+        <!-- /.container -->
 
+    </div>
+    <!-- /.content-section-a -->
 
-/**
- * Updates the current URL to include a hashtag of the current page number.
- */
-function updateURL() {
-  try {
-    window.history.replaceState({} , null, '#' + currentPosition());
-  } catch (e) {
-    window.location.hash = currentPosition();
-  }
-}
+    <div class="content-section-b">
 
+        <div class="container">
 
-/**
- * Sets the progress indicator.
- */
-function updateProgress() {
-  var progressBar = document.querySelector('.progress-bar');
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
+                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/dog.png" alt="">
+                </div>
+            </div>
 
-  if (progressBar !== null) {
-    var numSlides = document.getElementsByClassName('slide').length;
-    var position = currentPosition() - 1;
-    var percent = (numSlides === 1) ? 100 : 100 * position / (numSlides - 1);
-    progressBar.style.width = percent.toString() + '%';
-  }
-}
+        </div>
+        <!-- /.container -->
 
+    </div>
+    <!-- /.content-section-b -->
 
-/**
- * Removes tabindex property from all links on the current slide, sets
- * tabindex = -1 for all links on other slides. Prevents slides from appearing
- * out of control.
- */
-function updateTabIndex() {
-  var allLinks = document.querySelectorAll('.slide a');
-  var position = currentPosition();
-  var currentPageLinks = document.getElementById('slide-' + position).querySelectorAll('a');
-  var i;
+    <div class="content-section-a">
 
-  for (i = 0; i < allLinks.length; i++) {
-    allLinks[i].setAttribute('tabindex', -1);
-  }
+        <div class="container">
 
-  for (i = 0; i < currentPageLinks.length; i++) {
-    currentPageLinks[i].removeAttribute('tabindex');
-  }
-}
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
+                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/phones.png" alt="">
+                </div>
+            </div>
 
-/**
- * Determines whether or not we are currently in full screen mode
- */
-function isFullScreen() {
-  return document.fullscreenElement ||
-         document.mozFullScreenElement ||
-         document.webkitFullscreenElement ||
-         document.msFullscreenElement;
-}
+        </div>
+        <!-- /.container -->
 
-/**
- * Toggle fullScreen mode on document element.
- * Works on chrome (>= 15), firefox (>= 9), ie (>= 11), opera(>= 12.1), safari (>= 5).
- */
-function toggleFullScreen() {
-  /* Convenient renames */
-  var docElem = document.documentElement;
-  var doc = document;
+    </div>
+    <!-- /.content-section-a -->
 
-  docElem.requestFullscreen =
-      docElem.requestFullscreen ||
-      docElem.msRequestFullscreen ||
-      docElem.mozRequestFullScreen ||
-      docElem.webkitRequestFullscreen.bind(docElem, Element.ALLOW_KEYBOARD_INPUT);
+	<a  name="contact"></a>
+    <div class="banner">
 
-  doc.exitFullscreen =
-      doc.exitFullscreen ||
-      doc.msExitFullscreen ||
-      doc.mozCancelFullScreen ||
-      doc.webkitExitFullscreen;
+        <div class="container">
 
-  isFullScreen() ? doc.exitFullscreen() : docElem.requestFullscreen();
-}
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Connect to Start Bootstrap:</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Update the tabindex to prevent weird slide transitioning
-  updateTabIndex();
+        </div>
+        <!-- /.container -->
 
-  // If the location hash specifies a page number, go to it.
-  var page = window.location.hash.slice(1);
-  if (page) {
-    navigate(parseInt(page) - 1);
-  }
+    </div>
+    <!-- /.banner -->
 
-  document.onkeydown = function (e) {
-    var kc = e.keyCode;
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    // left, down, H, J, backspace, PgUp - BACK
-    // up, right, K, L, space, PgDn - FORWARD
-    // enter - FULLSCREEN
-    if (kc === 37 || kc === 40 || kc === 8 || kc === 72 || kc === 74 || kc === 33) {
-      navigate(-1);
-    } else if (kc === 38 || kc === 39 || kc === 32 || kc === 75 || kc === 76 || kc === 34) {
-      navigate(1);
-    } else if (kc === 13) {
-      toggleFullScreen();
-    }
-  };
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
-  if (document.querySelector('.next') && document.querySelector('.prev')) {
-    document.querySelector('.next').onclick = function (e) {
-      e.preventDefault();
-      navigate(1);
-    };
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
-    document.querySelector('.prev').onclick = function (e) {
-      e.preventDefault();
-      navigate(-1);
-    };
-  }
-});
-
-
-  </script>
 </body>
+
 </html>

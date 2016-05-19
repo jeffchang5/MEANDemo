@@ -11,12 +11,17 @@ var queryURL = (gplace_api.url +
 
 app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/bower_components'));
+app.use(express.static(__dirname + '/public'));
+
+
+
 app.get('/', function(req, res) {
 	// if (req.isAuthenticated = false) {
 	// 	res.render('intro');	
 	// }
 	//res.render('intro');
-	//res.sendFile('index.html', {root: __dirname} );
+	res.sendFile('index.html', {root: __dirname});
+
 
 });
 

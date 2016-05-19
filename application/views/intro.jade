@@ -1,11 +1,11 @@
-html(ng-app='')
+html(ng-app='TimHortons')
+	head
+		title Tinder for Tim Hortons
+		link(type = 'text/css' href='/bootstrap/dist/css/bootstrap.min.css')
+	body(ng-controller='TimHortonsController')
+		input(ng-model='foo', value='bar')
+		button(ng-click='changeFoo()' ng-cloak) {{32424}}
+		script(src='/angular/angular.min.js')
+		script(src='/controllers/TimHortonsController.js')
 
-  body(ng-controller='MyController')
-    input(ng-model='foo', value='bar')
-    //
-      Button tag with ng-click directive, and
-      string expression 'buttonText'
-      wrapped in "{{ }}" markup
-    button(ng-click='changeFoo()') {{buttonText}}
-    script(src='/angular/angular.min.js')
-
+	
