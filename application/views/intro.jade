@@ -1,0 +1,11 @@
+html(ng-app='')
+
+  body(ng-controller='MyController')
+    input(ng-model='foo', value='bar')
+    //
+      Button tag with ng-click directive, and
+      string expression 'buttonText'
+      wrapped in "{{ }}" markup
+    button(ng-click='changeFoo()') {{buttonText}}
+    script(src='/angular/angular.min.js')
+
