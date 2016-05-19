@@ -66,7 +66,7 @@ controls: false
 ### Installing the MEAN Stack
 #####Windows
 ```
-Download the official binary from [Node's Official Website]
+choco install mongodb
 ```
 #####Mac
 ```
@@ -78,8 +78,6 @@ brew install npm
 sudo apt-get install nodejs
 sudo apt-get install npm
 ```
-
-[Node's Official Website]: https://nodejs.org/en/
 
 
 
