@@ -1,4 +1,7 @@
 'use strict';
-var gplace_api_key = require('./config/gplace_api_key');
-console.log(gplace_api_key.key);
+var express = require('express');
+var app = express();
+var gplace_api = require('./config/gplace_api_key');
+
+app.get('')
 
