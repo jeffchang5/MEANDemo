@@ -1,0 +1,64 @@
+<style>
+  body {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    background-color: #eee;
+  }
+
+  .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    padding-bottom: 100px;
+    margin: 0 auto;
+  }
+  .form-signin .form-signin-heading,
+  .form-signin .checkbox {
+    margin-bottom: 10px;
+  }
+  .form-signin .checkbox {
+    font-weight: normal;
+  }
+  .form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  button {
+
+    margin-top: 20px;
+  }
+</style>
+<div class="container">
+
+  <form ng-submit="login()" class="form-signin">
+    <h2 class="form-signin-heading">Please sign up</h2>
+    <label for="inputUsername" class="sr-only">Username</label>
+    <input type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input ng-model = 'signup.password' type="password" id="inputPassword" class="form-control" placeholder="Enter your password." required>
+
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+    <div style = "margin-top:15px;" ng-show = "warning"><div class='alert alert-warning'>The passwords don't match</div></div>
+
+  </form>
+
+</div>
