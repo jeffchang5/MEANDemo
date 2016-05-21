@@ -1,12 +1,12 @@
 doctype html
-html(ng-app='CinderApp' lang='en')
+html(ng-app='ToDoApp' lang='en')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='description', content='')
     meta(name='author', content='')
-    title Cinder
+    title ToDo App
     // Bootstrap Core CSS
     link(href='css/bootstrap.min.css', rel='stylesheet')
     // Custom CSS
@@ -19,7 +19,7 @@ html(ng-app='CinderApp' lang='en')
     //if lt IE 9
       script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
       script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
-  body(ng-controller='CinderController')
+  body(ng-controller='ToDoController')
     // Navigation
     nav.navbar.navbar-default.navbar-fixed-top.topnav(role='navigation')
       .container.topnav
@@ -30,14 +30,14 @@ html(ng-app='CinderApp' lang='en')
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand.topnav(ui-sref='index') Cinder
+          a.navbar-brand.topnav(ui-sref='index') ToDo
         // Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
             li
               a(ng-show = 'loggedin' ui-sref='login') Login
             li
-              a(ui-sref='match') Match
+              a(ui-sref='todo') ToDo
             li
               a(ui-sref='profile') Profile
         // /.navbar-collapse
